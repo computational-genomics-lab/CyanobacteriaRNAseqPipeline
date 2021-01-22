@@ -75,7 +75,7 @@ if [ -f /etc/redhat-release ]; then
 fi
 
 if [ -f /etc/redhat-release ]; then
-    declare -a dpkglist=("git" "make" "cmake" "zlib-devel" "gcc" "gcc-c++")
+    declare -a dpkglist=("git" "zlib-devel" "gcc" "gcc-c++")
     for package in "${dpkglist[@]}";
 	    do
   		    if ! [ $(rpm -qa | grep $package 2>/dev/null | grep -c $package) -ge 1 ] ;
