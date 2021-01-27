@@ -72,8 +72,8 @@ class bbduk(luigi.Task):
 																"this will be discarded. Default: min_average_quality=10")
 	min_base_quality = luigi.OptionalParameter(default="0",description="Reads with any base below this quality (after trimming) will be discarded. "
 																"Default: min_base_quality=0")
-	min_GC = luigi.OptionalParameter(default="0.0", description="Discard reads with GC content below this. Default: min_gc=0.001")
-	max_GC = luigi.OptionalParameter(default="1.0", description="Discard reads with GC content below this. Default: max_gc=0.999")
+	mingc = luigi.OptionalParameter(default="0.0", description="Discard reads with GC content below this. Default: mingc=0.001")
+	maxgc = luigi.OptionalParameter(default="1.0", description="Discard reads with GC content below this. Default: maxgc=0.999")
 	kmer = luigi.OptionalParameter(default="13", description="Kmer length used for finding contaminants. Default: kmer=13")
 
 	trim_front = luigi.Parameter(default="0", description="trimming how many bases in front for read. Default: "
@@ -124,8 +124,8 @@ class bbduk(luigi.Task):
 					   "qtrim={quality_trim} " \
 					   "ftl={trim_front} " \
 					   "ftr2={trim_tail} " \
-					   "mingc={min_GC} " \
-					   "maxgc={max_GC} " \
+					   "mingc={mingc} " \
+					   "maxgc={maxgc} " \
 					   "maxns={max_n} " \
 					   "tbo={trim_by_overlap} " \
 					   "tpe={trim_pairs_evenly} " \
@@ -155,8 +155,8 @@ class bbduk(luigi.Task):
 					quality_trim=self.quality_trim,
 					trim_front=self.trim_front,
 					trim_tail=self.trim_tail,
-					min_GC=self.min_GC, max_n=self.max_n,
-					max_GC=self.max_GC,
+					mingc=self.min_GC, max_n=self.max_n,
+					maxgc=self.max_GC,
 					kmer=self.kmer,
 					trim_by_overlap=self.trim_by_overlap,
 					trim_pairs_evenly=self.trim_pairs_evenly,
@@ -172,8 +172,8 @@ class bbduk(luigi.Task):
 					   "minlength={min_length} " \
 					   "minavgquality={min_average_quality} " \
 					   "minbasequality={min_base_quality} " \
-					   "mingc={min_GC} " \
-					   "maxgc={max_GC} " \
+					   "mingc={mingc} " \
+					   "maxgc={maxgc} " \
 					   "trimq={trim_quality} " \
 					   "qtrim={quality_trim} " \
 					   "ftl={trim_front} " \
@@ -198,8 +198,8 @@ class bbduk(luigi.Task):
 											trim_front=self.trim_front,
 											trim_tail=self.trim_tail,
 											min_length=self.min_length,
-											min_GC=self.min_GC,
-											max_GC=self.max_GC,
+											mingc=self.mingc,
+											maxgc=self.maxgc,
 											kmer=self.kmer,
 											read_clean_log_folder=read_clean_log_folder,
 											bbduk_se_clean_stat_folder=bbduk_se_clean_stat_folder)
