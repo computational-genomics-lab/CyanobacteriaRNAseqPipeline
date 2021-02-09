@@ -262,7 +262,7 @@ fi
 
 
 echo -e `date`  "\e[1;34m\tCreating 'base' environment and Installing\e[0m"
-declare -a list=(r-base bioconductor-delayedarray python=3.7 psutil libgcc imagemagick libiconv libcxx zlib libxml2 libcurl libopenblas libtool bzip2 luigi pandas numpy scipy biopython perl-bioperl bbmap  qualimap kallisto samtools gffread r-devtools bioconductor-summarizedexperiment  bioconductor-biocparallel bioconductor-enhancedvolcano bioconductor-genomicranges r-rcppparallel bioconductor-s4vectors bioconductor-deseq2 bioconductor-rhdf5 bioconductor-rhdf5lib r-optparse bioconductor-edger bioconductor-tximport bioconductor-genomicfeatures bioconductor-regionreport bioconductor-deformats bioconductor-plyranges r-pheatmap r-colorspace r-rcolorbrewer r-optparse r-dt r-gplots r-ggplot2 r-stringr r-tidyr r-dplyr r-rcpp r-rcpparmadillo r-readr pandoc) 
+declare -a list=(r-base bioconductor-delayedarray python=3.7 psutil libgcc imagemagick libiconv libcxx zlib libxml2 libcurl libopenblas libtool bzip2 luigi pandas numpy scipy biopython perl-bioperl bbmap fastqc qualimap kallisto samtools gffread r-devtools bioconductor-summarizedexperiment  bioconductor-biocparallel bioconductor-enhancedvolcano bioconductor-genomicranges r-rcppparallel bioconductor-s4vectors bioconductor-deseq2 bioconductor-rhdf5 bioconductor-rhdf5lib r-optparse bioconductor-edger bioconductor-tximport bioconductor-genomicfeatures bioconductor-regionreport bioconductor-deformats bioconductor-plyranges r-pheatmap r-colorspace r-rcolorbrewer r-optparse r-dt r-gplots r-ggplot2 r-stringr r-tidyr r-dplyr r-rcpp r-rcpparmadillo r-readr pandoc) 
     for package in "${list[@]}";
 	    do
   		#echo -e "\e[1;36m \t\t\t\tinstalling $package\e[0m"
