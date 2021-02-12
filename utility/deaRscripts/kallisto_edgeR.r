@@ -39,9 +39,9 @@ make_option(c("-R", "--reportName"),
 			dest="reportName",
 			help="name of the project used for the report [default: name of the current directory]."),
 
-make_option(c("-T", "--templateFile"),
-			dest="templateFile",
-			help="path to the R markdown Template file"),
+#make_option(c("-T", "--templateFile"),
+#			dest="templateFile",
+#			help="path to the R markdown Template file"),
 
 make_option(c("-t", "--targetFile"),
 			default="target.txt",
