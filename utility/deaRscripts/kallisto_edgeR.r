@@ -10,7 +10,7 @@ suppressMessages(library(edgeR))
 suppressMessages(library(DT))
 suppressMessages(library(ggplot2))
 suppressMessages(library(gplots))
-suppressMessages(library(EnhancedVolcano))
+#suppressMessages(library(EnhancedVolcano))
 suppressMessages(library(GenomicFeatures))
 suppressMessages(library(regionReport))
 suppressMessages(library(DEFormats))
@@ -105,7 +105,7 @@ workDir <- getwd()
 projectName <- opt$projectName  
 reportName <- opt$reportName                     # name of the project
 targetFile <- opt$targetFile  
-templateFile <-opt$templateFile                       # path to the design/target file
+#templateFile <-opt$templateFile                       # path to the design/target file
 quantDir <- opt$quantDir							 # path to the directory containing raw counts files
 tx2geneDirectory <- opt$tx2geneDirectory		 
 varInt <- opt$varInt                                 # factor of interest
@@ -225,7 +225,8 @@ exportResults.edgeR(out.edgeR, group=group, counts=countdata, alpha=alpha, expor
 
 save.image(file=paste0(reportName, ".RData"))
 
-report <- edgeReport(dge, lrt, projectName, intgroup, outdir = reportName,  output = 'index', nBest = 50000, nBestFeatures = 20, template = templateFile)
+#report <- edgeReport(dge, lrt, projectName, intgroup, outdir = reportName,  output = 'index', nBest = 50000, nBestFeatures = 20, template = templateFile)
+report <- edgeReport(dge, lrt, projectName, intgroup, outdir = reportName,  output = 'index', nBest = 50000, nBestFeatures = 20)
 
 
 if(interactive()) {
